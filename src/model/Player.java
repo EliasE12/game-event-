@@ -5,9 +5,9 @@ public class Player {
     private String name;
     private String nickName;
     private int category;
-    private int score;
+    private double score;
 
-    public Player(String name, String nickName, int category, int score) {
+    public Player(String name, String nickName, int category, double score) {
         this.name = name;
         this.nickName = nickName;
         this.category = category;
@@ -39,11 +39,11 @@ public class Player {
         this.category = category;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(double score) {
         this.score = score;
     }
 

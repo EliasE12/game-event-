@@ -48,7 +48,7 @@ public class GameEvent {
         }
     }
 
-    public void addPlayer(String name, String nickName, int category, int score) throws EmptyDataException {
+    public void addPlayer(String name, String nickName, int category, double score) throws EmptyDataException {
         if (name == null || nickName == null) {
             throw new EmptyDataException();
         } else {

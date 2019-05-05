@@ -63,7 +63,7 @@ public class GameEventController {
                     tfNombre.getText(),
                     tfApodo.getText(),
                     Integer.parseInt(tfCategoria.getText()),
-                    Integer.parseInt(tfPuntaje.getText()));
+                    Double.parseDouble(tfPuntaje.getText()));
             taJugadores.setText(gameEvent.printPlayers());
         }catch (EmptyDataException e){
             Alert men = new Alert(Alert.AlertType.WARNING);
