@@ -20,12 +20,12 @@
          <children>
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="381.0" spacing="10.0">
                <children>
-                  <JFXButton buttonType="RAISED" onAction="#controlOrdenarNombre" style="-fx-background-color: #9494b8;" text="Ordenar por Nombre">
+                  <JFXButton fx:id="btOdenarnombre" buttonType="RAISED" onAction="#controlOrdenarNombre" style="-fx-background-color: #9494b8;" text="Ordenar por Nombre">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" onAction="#controlOrdenarPuntaje" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #9494b8;" text="Ordenar por puntaje">
+                  <JFXButton fx:id="btOrdenarPuntaje" buttonType="RAISED" onAction="#controlOrdenarPuntaje" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #9494b8;" text="Ordenar por puntaje">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -38,7 +38,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton onAction="#controlGuardarEstado" style="-fx-background-color: #9494b8;" text="Guardar Estado">
+            <JFXButton fx:id="btGuardarEstado" onAction="#controlGuardarEstado" style="-fx-background-color: #9494b8;" text="Guardar Estado">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

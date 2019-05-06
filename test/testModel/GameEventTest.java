@@ -14,20 +14,13 @@ class GameEventTest {
     private GameEvent gameEvent;
 
     private void setupScenary1(){
-        List<Player> players = new ArrayList<>();
-        gameEvent = new GameEvent(players);
+        gameEvent = new GameEvent( new ArrayList<>());
     }
     private void setupScenary2(){
-        List<Player> players = null;
-        gameEvent = new GameEvent(players);
-    }
-    private void setupScenary3(){
-
         List<Player> players = new ArrayList<>();
         players.add(new Player("Ana Nathan","An", 3, 79.0));
         players.add(new Player("Roy Rolls","Rr", 2, 62.0));
         players.add(new Player("Sebas Conor","Sc", 5, 99.0));
-
         gameEvent = new GameEvent(players);
     }
 
@@ -48,21 +41,22 @@ class GameEventTest {
 
     @Test
     public void testAddPlayer2(){
-        setupScenary2();
+        setupScenary1();
         String n = null;
         String nn = null;
-        int c = 2;
-        double s = 93.0;
+        int c = 4;
+        double s = 88.0;
 
         try{
             gameEvent.addPlayer(n,nn,c,s);
-            fail("Los valores ingresados no son correctos. No se agregó el nuevo jugador");
-        }catch (EmptyDataException e){}
+        }catch (EmptyDataException e){
+            assertNotNull(e, "No se ha producido ninguna excepción. El nuevo jugador se agregado correctamente");
+        }
     }
 
     @Test
     public void testSortByScore1(){
-        setupScenary3();
+        setupScenary2();
         gameEvent.sortByScore();
         for (int i = 0; i < gameEvent.getPlayers().size(); i++) {
             for (int j = i+1; j < gameEvent.getPlayers().size(); j++) {

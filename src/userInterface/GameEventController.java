@@ -1,5 +1,6 @@
 package userInterface;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import exception.EmptyDataException;
@@ -21,6 +22,9 @@ public class GameEventController {
     @FXML private JFXTextField tfApodo;
     @FXML private JFXTextField tfCategoria;
     @FXML private JFXTextField tfPuntaje;
+    @FXML private JFXButton btGuardarEstado;
+    @FXML private JFXButton btOdenarnombre;
+    @FXML private JFXButton btOrdenarPuntaje;
 
     private GameEvent gameEvent;
 
@@ -42,6 +46,11 @@ public class GameEventController {
 
         taJugadores.setStyle("-fx-text-alignment: center");
         taJugadores.setText(gameEvent.printPlayers());
+
+        btGuardarEstado.setDisable(true);
+        btOdenarnombre.setDisable(true);
+        btOrdenarPuntaje.setDisable(true);
+
     }
 
     @FXML
@@ -67,11 +76,22 @@ public class GameEventController {
             taJugadores.setText(gameEvent.printPlayers());
         }catch (EmptyDataException e){
             Alert men = new Alert(Alert.AlertType.WARNING);
-            men.setTitle("Warning !!!");
-            men.setHeaderText("Worthless");
-            men.setContentText("You have not entered any value.");
+            men.setTitle("Ciudado !!!");
+            men.setHeaderText("No está ingresando ningún valor");
+            men.setContentText("Debe llenar todos los campos.");
+            men.showAndWait();
+        }catch (NumberFormatException e){
+            Alert men = new Alert(Alert.AlertType.WARNING);
+            men.setTitle("Ciudado !!!");
+            men.setHeaderText("No está ingresando algún valor correctamente");
+            men.setContentText("Debe ingresar valores correctos.");
             men.showAndWait();
         }
+
+        btGuardarEstado.setDisable(false);
+        btOdenarnombre.setDisable(false);
+        btOrdenarPuntaje.setDisable(false);
+
     }
 
     @FXML

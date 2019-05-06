@@ -69,7 +69,7 @@ public class GameEvent {
     }
 
     public String printPlayers() {
-        String print = " Lista De jugadores presenciales".toUpperCase()+"\n\n";
+        String print = " Lista De jugadores ".toUpperCase()+"\n\n";
         for (Player current : players) {
             print += current.getName() + "" + "\n";
         }
